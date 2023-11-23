@@ -67,9 +67,8 @@ const App = () =>
   {
     constructor()
     {
-      
-      console.log("-----SBI Constructor-----")
       super()
+      console.log("-----SBI Constructor-----")
     }
   }
 
