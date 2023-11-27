@@ -7,7 +7,10 @@ import reportWebVitals from './reportWebVitals';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <App color="black" size="35" clickEvent={()=>{
+      console.log("Clicked on the event coming from parent")
+      alert("Clicked the button!!")
+    }}/>
   </React.StrictMode>
 );
 
