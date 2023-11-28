@@ -2,14 +2,61 @@ import logo from './logo.svg';
 import './App.css';
 import React from 'react';
 
+// class App extends React.Component
+// {
+//   state = {counter: 0}
+// incrementCounter = () =>
+// {
+// this.setState({counter:parseInt(this.state.counter)+1})
+// }
+
+// static getDerivedStateFromProps()
+// {
+// console.log("Inside the getDerivedStateFromProps")
+// }
+
+// // Overridden render function
+// render()
+// {
+// console.log("Inside the render method")
+// console.log(this.props)
+// return (
+// <div>
+// <button onClick={this.incrementCounter}>Click me</button>
+// <br/>
+// Counter:{this.state.counter}
+// </div>
+// )
+// }
+
+// componentDidMount()
+// {
+// console.log("Inside the componentDidMount method")
+// }
+
+// }
+
 //Class component
 class App extends React.Component
 {
   //declaring the state
   state = {count: 0}
+  //setCount
+  //setAditya
+
+  componentDidMount()
+  {
+    console.log("--------------------componentDidMount--------------------")
+  }
   constructor(props)
   {
     super(props)
+    console.log("------------Constructor of App------------")
+  }
+
+  static getDerivedStateFromProps()
+  {
+    console.log("------------getDerviedStateFromProps------------")
   }
 
   updateCount()
@@ -21,6 +68,7 @@ class App extends React.Component
 
   render()
   {
+    console.log("--------------------Rendered the UI--------------------")
     return <div>
       Hello Functional component
       <div>
@@ -36,7 +84,8 @@ class App extends React.Component
         <button onClick={()=>this.updateCount()}>Increment count</button>
       </div>
     </div>
-  }  
+  }
+
 }
 
 
