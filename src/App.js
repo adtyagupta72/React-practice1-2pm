@@ -54,9 +54,18 @@ class App extends React.Component
     console.log("------------Constructor of App------------")
   }
 
+  //Mounting
+  //Updating
   static getDerivedStateFromProps()
   {
     console.log("------------getDerviedStateFromProps------------")
+  }
+
+  shouldComponentUpdate()
+  {
+    console.log("------------shouldComponentUpdate------------")
+    console.log(this.state.count)
+    return true;
   }
 
   updateCount()
@@ -64,6 +73,10 @@ class App extends React.Component
     console.log("Hello button click! ")
     //this.state.count = this.state.count+1
     this.setState({count: this.state.count+1})
+  }
+  printCount()
+  {
+    console.log(this.state.count)
   }
 
   render()
@@ -76,7 +89,7 @@ class App extends React.Component
         <br/>
         Prop 2: {this.props.size}
         <br/>
-        <button onClick={this.props.clickEvent}>Click me!</button>
+        <button onClick={()=>this.printCount()}>Click me!</button>
       </div>
       <div>
         State: {this.state.count}
@@ -84,6 +97,28 @@ class App extends React.Component
         <button onClick={()=>this.updateCount()}>Increment count</button>
       </div>
     </div>
+  }
+
+  getSnapshotBeforeUpdate(prevProps, prevState)
+  {
+    console.log("--------------------getSnapshotBeforeUpdate--------------------")
+    console.log("prevProps")
+    console.log(prevProps)
+    console.log("----------")
+    console.log("props")
+    console.log(this.props)
+    console.log("----------")
+    console.log("prevState")
+    console.log(prevState)
+    console.log("----------")
+    console.log("state")
+    console.log(this.state)
+    return true;
+  }
+
+  componentDidUpdate()
+  {
+    console.log("--------------------componentDidUpdate--------------------")
   }
 
 }
