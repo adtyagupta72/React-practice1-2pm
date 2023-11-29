@@ -34,6 +34,7 @@ import React from 'react';
 // console.log("Inside the componentDidMount method")
 // }
 
+
 // }
 
 //Class component
